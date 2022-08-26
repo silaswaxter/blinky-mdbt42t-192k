@@ -2,28 +2,22 @@
 #include <stdint.h>
 
 #include "nrf_gpio.h"
+#include "nrfx_systick.h"
 
 #define INDICATOR_LED 20
-
-// only works with gcc `-O0` flag which disables all optimizations
-void bad_delay(void){
-    for(int i = 0; i < 1000000; i++){
-
-    }
-}
 
 int main(void)
 {
     nrf_gpio_cfg_output(INDICATOR_LED);
+    nrfx_systick_init();
 
     while (true)
     {
-        //turn off
+        //turn off (active low)
         nrf_gpio_pin_set(INDICATOR_LED);
-        bad_delay();
-        //turn on
+        nrfx_systick_delay_ms(500);
+        //turn on (active low)
         nrf_gpio_pin_clear(INDICATOR_LED);
-        bad_delay();
-
+        nrfx_systick_delay_ms(500);
     }
 }
