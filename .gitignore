@@ -1,0 +1,4 @@
+*.o
+*.elf32-little
+*.bin
+*.map

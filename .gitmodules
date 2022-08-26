@@ -1,0 +1,9 @@
+[submodule "lib/external/nrf5_sdk/nrfx"]
+	path = lib/external/nrf5_sdk/nrfx
+	url = https://github.com/NordicSemiconductor/nrfx.git
+[submodule "lib/external/nrfx"]
+	path = lib/external/nrfx
+	url = https://github.com/NordicSemiconductor/nrfx.git
+[submodule "lib/external/CMSIS_5"]
+	path = lib/external/CMSIS_5
+	url = https://github.com/ARM-software/CMSIS_5.git
